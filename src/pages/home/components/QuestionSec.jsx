@@ -55,6 +55,7 @@ const QuestionSec = () => {
   }, [progressResponse]);
   
   const getQuestions = useSelector((state) => state.homeReducer.questions);
+  const currentUser = useSelector((state) => state.homeReducer.user);
 const [activeQuestion, setActiveQuestion] = useState(0);
 const [questions, setQuestions] = useState([]);
 const [loading, setLoading] = useState(true);
@@ -190,7 +191,7 @@ const questionId = questions[activeQuestion]?.questionId;
     setChecked(answer === checked ? '' : answer);
     setSentRespons(prevState => ({
       ...prevState,
-      user :user?.id,
+      user :currentUser?.id,
       answer: answer?.id,
       question: questionId,
     }))
@@ -257,7 +258,7 @@ const questionId = questions[activeQuestion]?.questionId;
       <h2>{question}</h2>
     ) : (
       <div>
-        <h2>Result: {result.completed_question}</h2>
+        <h2>{result.completed_question}</h2>
       </div>
     )}
   </div>
