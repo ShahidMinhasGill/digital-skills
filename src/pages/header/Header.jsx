@@ -69,7 +69,7 @@ function Header() {
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {/* <BsPersonCircle className="profile-icon" /> */}
-        <div className=" col-2 profile-icon " >
+        <div className=" col-3 profile-icon " >
          <img src={logo} alt="" />
         </div>
         

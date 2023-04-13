@@ -132,7 +132,6 @@
     }
     .profile-icon {
       display: block;
-      width: 25px;
       img{
         height: 25px;
         fill: #ff9700;
@@ -168,6 +167,9 @@
     .dropdwons {
       .select {
         font-size: 9px;
+      }
+      .join-us{
+        display: none;
       }
     }
    
