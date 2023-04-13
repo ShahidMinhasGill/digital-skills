@@ -120,8 +120,6 @@ if (loading) {
 
 const question = questions[activeQuestion]?.question;
 const choices = questions[activeQuestion]?.choices;
-const answerId = questions[activeQuestion]?.answerId;
-console.log('choices',choices);
 const questionId = questions[activeQuestion]?.questionId;
 
   function handleCheckboxChange(event) {
@@ -213,7 +211,7 @@ const questionId = questions[activeQuestion]?.questionId;
           </div>
              <div className="col-lg-11 col-md-12 ">
               <p>  
-              wich of the follwing elements of digital marketing are part of your marketing strategy?
+              Which of the follwing elements of digital marketing are part of your marketing strategy?
               <br />
               <br />
               Select your response to each of the statements below:
@@ -244,7 +242,7 @@ const questionId = questions[activeQuestion]?.questionId;
             {!showResult ? (
         <div >
         
-          <div className="col-11 d-flex mx-auto">
+          <div className="col-lg-11 col-12 d-flex mx-auto">
           <div>
             <span className="active-question-no">
               {addLeadingZero(activeQuestion + 1)}
@@ -263,10 +261,10 @@ const questionId = questions[activeQuestion]?.questionId;
     )}
   </div>
         </div>
-            <div className="col-9 mt-4 m-3 mx-auto">
+            <div className="col-lg-9 col-11 mt-4 m-3 mx-auto">
           <h2>Select your response</h2>
         </div>
-        <div className="col-10 mt-3 mx-auto">
+        <div className="col-lg-10 col-12 mt-3 mx-auto">
         {choices?.map((answer, index) => (
           <div  onClick={() => onAnswerSelected(answer, index)} className={`col-lg-6 col-12 d-flex  ${index % 2 !== 1 ? 'question-bg' : 'question-bg2'}`}>
             <div className="col-lg-1 col-2 d-flex justify-content-center align-items-center">
@@ -312,7 +310,7 @@ const questionId = questions[activeQuestion]?.questionId;
       ) : (
         <div className="result">
           <h3>Result</h3>
-          <Outcomes />
+          {/* <Outcomes /> */}
 
           <div>
     </div>

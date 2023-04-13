@@ -62,24 +62,6 @@ const LoginModal = ({ show, onHide, welcomeMessage, hideSignUpShowLogin }) => {
               };
               dispatch(login(userData));
               setFormSubmitted(true);
-            //   dispatch(login(userData));
-            //   setIncorrectFields("Incorrect email or password!");
-        //   if (!token) {
-        //     toast.error('Incorrect email or password!')
-        //   }
-        //   dispatch(login(userData, (data)=> {
-        //     console.log('userData1',userData);
-        //     if (data) {
-        //       setLoginSuccessful("Login Successful!");
-        //       setLoader(false);
-        //       setIncorrectFields("");
-        //       welcomeMessage("Fayaz");
-        //     } else {
-        //       setLoginSuccessful("");
-        //       setLoader(false);
-        //       setIncorrectFields("Incorrect email or password!");
-        //     }
-        //   }));
       }
   };
 
@@ -95,15 +77,10 @@ const LoginModal = ({ show, onHide, welcomeMessage, hideSignUpShowLogin }) => {
         <Form onSubmit={handleSubmit}>
         <div className="main">
             <h1>Login </h1>
-            {/* <p className="title">Don't have an account yet?
+            <p className="title">Don't have an account yet?
                 <span onClick={hideSignUpShowLogin}> Create it now</span>
-            </p> */}
-            {/* <button className="google">
-                <img src={logingoogle} alt="logingoogle" className="logingoogle"/>
-                Continue with Google
-            </button> */}
+            </p>
         </div>
-        {/* <p>or sign up with your email</p> */}
         <Row>
 
             <Col lg={6} md={6} sm={6} xs={12}>
