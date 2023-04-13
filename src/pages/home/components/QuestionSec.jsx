@@ -266,7 +266,7 @@ const questionId = questions[activeQuestion]?.questionId;
         </div>
         <div className="col-lg-10 col-12 mt-3 mx-auto">
         {choices?.map((answer, index) => (
-          <div  onClick={() => onAnswerSelected(answer, index)} className={`col-lg-6 col-12 d-flex  ${index % 2 !== 1 ? 'question-bg' : 'question-bg2'}`}>
+          <div  onClick={() => onAnswerSelected(answer, index)} className={` col-12 d-flex  ${index % 2 !== 1 ? 'question-bg' : 'question-bg2'}`}>
             <div className="col-lg-1 col-2 d-flex justify-content-center align-items-center">
               <input
                 class="form-check-input"
