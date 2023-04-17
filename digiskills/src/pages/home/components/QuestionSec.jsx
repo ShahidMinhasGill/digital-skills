@@ -59,7 +59,6 @@ const QuestionSec = () => {
 const [activeQuestion, setActiveQuestion] = useState(0);
 const [questions, setQuestions] = useState([]);
 const [loading, setLoading] = useState(true);
-const questionSectionRef = useRef(null);
 
 const fetchQuestionsformat = async () => {
   try {
@@ -98,7 +97,6 @@ useEffect(() => {
     // question_left: question.length - activeQuestion,
   }))
   // console.log('question_left',result.question_left);
-    window.scrollTo(0, 0)
 }, [activeQuestion]);
 
 useEffect(() => {
@@ -125,16 +123,16 @@ const choices = questions[activeQuestion]?.choices;
 const questionId = questions[activeQuestion]?.questionId;
 
   function handleCheckboxChange(event) {
-    setChecked(event.target.value);
+    const { name } = event.target;
+    setChecked(name === checked ? '' : name);
   }
   const nextStep = () => {
-     // scroll to top of page
+  
     if (result.completed_percentage >= 100) return;
       setResult((prev) => ({
         ...prev,
         completed_percentage: prev.completed_percentage + (100 / getQuestions?.data?.length),
       }));
-
   };
  
   const handleBack = ()=>{
@@ -161,7 +159,6 @@ const questionId = questions[activeQuestion]?.questionId;
     setActiveQuestion(0)
   }
   const onClickNext = () => { 
-   
     if (!token) {
       // User ID not found, show error message
       toast.error('Please Login first');
@@ -172,7 +169,6 @@ const questionId = questions[activeQuestion]?.questionId;
       if (activeQuestion !== questions.length - 1) {
         setActiveQuestion((prev) => prev + 1)
         nextStep()
-
       } else {
         // dispatch(fetchUserResult());
         nextStep()
@@ -182,7 +178,6 @@ const questionId = questions[activeQuestion]?.questionId;
         setShowResult(true)
         localStorage.removeItem('progressBarState');
       }
-     
     }
   }
 
@@ -208,7 +203,7 @@ const questionId = questions[activeQuestion]?.questionId;
           <button onClick={onClickHome}>Back to Homepage</button>
         </div>
              <div className="col-lg-8 col-md-12 ">
-              <h3><BsTools className="tool-icon"/>Digital Recommendations Engine  
+              <h3><BsTools className="tool-icon"/>Digital skill audit  
               {/* <p style={{marginLeft:'51px',fontSize:'21px'}}>Charting Your Path</p> */}
               </h3>
              
@@ -223,7 +218,7 @@ const questionId = questions[activeQuestion]?.questionId;
              </p>
           </div>
       </div>
-           <div id="question-section" ref={questionSectionRef} className="row question-sec p-3" style={{borderRadius:'10px 10px 0px 0px'}}>
+           <div className="row question-sec p-3" style={{borderRadius:'10px 10px 0px 0px'}}>
         <div className="col-3 d-flex align-items-center back-btn">
           <button onClick={handleBack}
           disabled={(activeQuestion === 0)}
@@ -278,7 +273,8 @@ const questionId = questions[activeQuestion]?.questionId;
                 type="radio"
                 name={answer}
                 checked={checked === answer}
-                onChange={() => setChecked(answer)}
+                onChange={handleCheckboxChange}
+               
                 id={`flexCheckChecked${index}`}
               />
               {/* <h2>{index}</h2> */}
