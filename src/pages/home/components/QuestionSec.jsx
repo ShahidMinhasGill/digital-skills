@@ -93,11 +93,8 @@ useEffect(() => {
 useEffect(() => {
   setResult((prev) => ({
     ...prev,
-    // completed_percentage: prev.completed_percentage + (100/25),
     completed_question: questions[activeQuestion]?.question,
-    // question_left: question.length - activeQuestion,
   }))
-  // console.log('question_left',result.question_left);
     window.scrollTo(0, 0)
 }, [activeQuestion]);
 
@@ -128,7 +125,6 @@ const questionId = questions[activeQuestion]?.questionId;
     setChecked(event.target.value);
   }
   const nextStep = () => {
-     // scroll to top of page
     if (result.completed_percentage >= 100) return;
       setResult((prev) => ({
         ...prev,
@@ -138,7 +134,6 @@ const questionId = questions[activeQuestion]?.questionId;
   };
  
   const handleBack = ()=>{
-    // if (result.completed_percentage >= 100) return;
     setResult((prev) => ({
       ...prev,
       completed_percentage: prev.completed_percentage - (100 / getQuestions?.data?.length),
@@ -150,14 +145,8 @@ const questionId = questions[activeQuestion]?.questionId;
       ...prev,
       completed_percentage: prev.completed_percentage = 0,
       question_left: 0,
-      // completed_question: 0,
     }));
-    // dispatch(fetchQuestions());
     setShowResult(false)
-
-    // console.log('completed_question', result.completed_percentage);
-    // setActiveQuestion((prev) => prev - 1)
-    // setActiveQuestion((prev) => prev = 0)
     setActiveQuestion(0)
   }
   const onClickNext = () => { 
@@ -174,7 +163,6 @@ const questionId = questions[activeQuestion]?.questionId;
         nextStep()
 
       } else {
-        // dispatch(fetchUserResult());
         nextStep()
         setActiveQuestion(0)
         setActiveQuestion(0)
@@ -209,7 +197,6 @@ const questionId = questions[activeQuestion]?.questionId;
         </div>
              <div className="col-lg-8 col-md-12 ">
               <h3><BsTools className="tool-icon"/>Digital Recommendations Engine  
-              {/* <p style={{marginLeft:'51px',fontSize:'21px'}}>Charting Your Path</p> */}
               </h3>
              
               
@@ -281,7 +268,6 @@ const questionId = questions[activeQuestion]?.questionId;
                 onChange={() => setChecked(answer)}
                 id={`flexCheckChecked${index}`}
               />
-              {/* <h2>{index}</h2> */}
             </div>
             <div className="col-lg-8 col-10 ">
               <h2>{answer.answer_test}</h2>

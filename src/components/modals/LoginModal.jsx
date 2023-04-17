@@ -9,10 +9,6 @@ import { login } from "./service/authApi";
 const LoginModal = ({ show, onHide, welcomeMessage, hideSignUpShowLogin }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate ()
-    // const isLoading = useSelector(state => state.auth.isLoading)
-    // const error = useSelector(state => state.auth.error)
-    // const token = useSelector(state => state.token)
-    // const { isLoading, token, error } = useSelector((state) => auth.state);
     const getUser = sessionStorage.getItem('user');
     const token = sessionStorage.getItem('token');
     const user = JSON.parse(getUser);

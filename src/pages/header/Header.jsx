@@ -61,10 +61,6 @@ function Header() {
     <div className="navclass">
 
     <Container>
-      {/* <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
-        <ToggleButton variant="light" value={1}>Line 1</ToggleButton>
-        <ToggleButton variant="light" value={2}>Line 2</ToggleButton>
-      </ToggleButtonGroup> */}
         <Navbar collapseOnSelect expand="lg" className="navbar navbar-light">
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -166,24 +162,8 @@ function Header() {
         <Nav className="ms-auto dir">
 
                       <Link to="/" className='select text-decoration-none join-us'>Join us</Link>
-      
-        {/* {firstName ? (
-          <div className="welcomeMessage">Hi {firstName}</div>
-        ) : (
-          <button onClick={() => setShowLogin(true)}>Login</button>
-        )} */}
-        {/* <button onClick={() => setShowLogin(true)}>Login</button> */}
       </Nav>
       )}
-        {/* {value.includes(2) && (
-        <Nav className="ms-auto dir">
-        <select className="select" defaultValue={joinus} onChange={handleChange}>
-          {languages.map((language, index) => (
-            <option key={index} value={language}>{language}</option>
-          ))}
-        </select>
-      </Nav>
-      )} */}
         </div>
       </div>
    

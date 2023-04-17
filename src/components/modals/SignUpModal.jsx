@@ -27,11 +27,6 @@ const SignUpModal = ({ show, onHide, welcomeMessage, hideSignUpShowLogin }) => {
     const [loginSuccessful, setLoginSuccessful] = useState("");
     const [incorrectFields, setIncorrectFields] = useState("");
     const emailRegExp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
-    // const isLoading = useSelector(state => state.auth.isLoading)
-    // const error = useSelector(state => state.auth.error)
-    // const token = useSelector(state => state.token)
-    // const { isLoading, token, error } = useSelector((state) => auth.state);
     const token = sessionStorage.getItem('token')
       const [values, setValues] = useState(initialValues);
 
@@ -59,10 +54,7 @@ const SignUpModal = ({ show, onHide, welcomeMessage, hideSignUpShowLogin }) => {
         setPassword(event.target.value);
       };
       const handleInputChange = (e) => {
-        //const name = e.target.name 
-        //const value = e.target.value 
         const { name, value } = e.target;
-    
         setValues({
           ...values,
           [name]: value,
